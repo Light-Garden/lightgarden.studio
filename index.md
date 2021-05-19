@@ -1,3 +1,3 @@
-# Watch this space
+# Light Garden Studios
 
-...site __coming soon__
+Watch this space.
