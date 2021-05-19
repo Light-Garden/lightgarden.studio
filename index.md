@@ -1,3 +1,3 @@
-# Light Garden Studios
+# Light Garden Studio
 
 Watch this space.
