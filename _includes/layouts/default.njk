@@ -8,8 +8,16 @@ title: Light Garden Studio
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
+    <canvas id="canvas"></canvas>
+
     {{ content | safe }}
+    
+    <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
+    <script src="https://twgljs.org/dist/4.x/twgl-full.min.js"></script>
+    <script src="https://webglfundamentals.org/webgl/resources/m3.js"></script>
+    <script src="script/app.js"></script>
   </body>
 </html>
