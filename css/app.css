@@ -35,12 +35,14 @@ a.next-section {
 	z-index: 30;
 	bottom: 0;
 	width: 100%;
-	padding: 1em;
+	padding: 4em 0 1em 0;
 	text-align: center;
-}
-
-a.next-section img {
-	width: 2em;;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	font-size: 0.7em;
+	background: url(/img/Arrow.png) no-repeat top center;
+	background-size: 3em;
 }
 
 section > div {
