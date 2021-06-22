@@ -224,7 +224,7 @@ footer {
 	font-weight: normal;
 }
 
-#about-us > p {
+#about-us div > p {
 	padding: 0 0 1em 10vw;
 	background: url(/img/Door_Wireframe_Small.png) no-repeat;
 	background-size: 1em;
