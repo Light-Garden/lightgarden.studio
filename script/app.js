@@ -22,9 +22,29 @@ const fragShader = `
   uniform float abA;
 
   vec4 abColor(float div, vec2 coords) {
-    vec4 originalR = texture2D(u_originalImage, (coords - (u_mouse * 0.03)));
-    vec4 originalG = texture2D(u_originalImage, (coords - (u_mouse * 0.01)));
-    vec4 originalB = texture2D(u_originalImage, (coords - (u_mouse * 0.005)));
+    // lens distortion coefficient (between
+    float k = -0.2;
+
+    // cubic distortion value
+    float kcube = 0.5;
+
+    float r2 = (coords.x-0.5)*(coords.x-0.5) + (coords.y-0.5)*(coords.y-0.5);       
+    float f = 0.0;
+    
+    if (kcube == 0.0) {
+         f = 1.0 + r2 * k;
+    } else {
+         f = 1.0 + r2 * (k + kcube * sqrt(r2));
+    };
+
+    float x = f * (coords.x-0.5)+0.5;
+    float y = f * (coords.y-0.5)+0.5;
+
+    vec2 newCoords = vec2(x, y);
+
+    vec4 originalR = texture2D(u_originalImage, (newCoords - (u_mouse * 0.03)));
+    vec4 originalG = texture2D(u_originalImage, (newCoords - (u_mouse * 0.01)));
+    vec4 originalB = texture2D(u_originalImage, (newCoords - (u_mouse * 0.005)));
     
     return vec4(originalR.r, originalG.g, originalB.b, 1.0) / div;
   }
@@ -120,7 +140,7 @@ function main() {
   
     let originalImage = { width: 1, height: 1 }; // replaced after loading
     const originalTexture = twgl.createTexture(gl, {
-      src: "/img/Tridoor.png", 
+      src: "/img/LG_Logo_hero.png", 
       crossOrigin: '',
     }, (err, texture, source) => {
       originalImage = source;
@@ -204,7 +224,7 @@ function main() {
   
   main();
 
-  lax.init()
+  lax.init();
 
   // Add a driver that we use to control our animations
   lax.addDriver('scrollY', function () {

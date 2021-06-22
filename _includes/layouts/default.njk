@@ -11,13 +11,30 @@ title: Light Garden Studio
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-    <canvas id="canvas"></canvas>
+    <div id="bg">
+      <div id="bg1"></div>
+      <div id="bg2"></div>
+      <div id="bg3"></div>
+      <div id="noise"></div>
+    </div>
 
-    {{ content | safe }}
-    
+  <nav>
+    <a href="#home"><img src="/img/LG_Logo_Nav.png" alt="Light Garden Logo"></a>
+    <ul>
+      <li><a href="#home">Welcome</a></li>
+        <li><a href="#our-studio">Our studio</a></li>
+        <li><a href="#about-us">About us</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+    <div id="content">
+      {{ content | safe }}
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
     <script src="https://twgljs.org/dist/4.x/twgl-full.min.js"></script>
     <script src="https://webglfundamentals.org/webgl/resources/m3.js"></script>
-    <script src="script/app.js"></script>
+    <script src="/script/app.js"></script>
   </body>
 </html>

@@ -1,14 +1,291 @@
-body {
-    background: #000;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@400;700&display=swap');
+
+html {
+	scroll-behavior: smooth;
 }
 
-canvas {
-	width: 1024px;
-    height: 1024px;
+body {
+    background: url(/img/BG.png) black;
+	color: white;
+	font-family: 'Roboto Mono', monospace;
+	margin: 0;
+}
+
+body a {
+	color: #76f4ff;
+}
+
+h1, h2, h3 {
+	font-family: 'Roboto', sans-serif;
+}
+
+section {
+	width: 100%;
+	max-width: 95em;
+	height: 100vh;
+	box-sizing: border-box;
+	margin: 0 auto;
+	display: flex;
+	position: relative;
+}
+
+a.next-section {
+	position:absolute;
 	display: block;
+	z-index: 30;
+	bottom: 0;
+	margin: 0 auto;
+}
+
+section > div {
+	width: 100%;
+	margin: auto 15em;
+}
+
+section h2 {
+	font-size: 5em;
+	margin-top: 0;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 30;
+	height: 100vh;
+	width: 15em;
+	display: flex;
+}
+
+nav > a {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 1;
+	display: block;
+	top: 2em;
+	left: 2em;
+}
+
+nav a img {
+	width: 50%;
+	transition: transform 0.5s;
+	transform-origin: center;
+	transition-timing-function: cubic-bezier(0,1,2,5);
+}
+
+
+nav a:hover img {
+	transform: rotate(-120deg);
+}
+
+
+nav ul {
+	margin: auto 2.5em;
+	padding: 0;
+
+}
+
+nav li {
+	list-style-type: none;
+	text-transform: uppercase;
+	margin: 0.5em 0;
+}
+
+nav li a {
+	text-decoration: none;
+	color: white;
+	opacity: 0.3;
+	transition-property: opacity;
+  	transition-duration: 0.5s;
+}
+
+nav li a:hover {
+	opacity: 1;
+}
+
+#bg {
+	z-index: 10;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: url(/img/BG.png);
+}
+
+footer {
+	width: 100%;
+	left: 0;
+	margin: 0;
+}
+
+#bg div {
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background-position: center;
+	mix-blend-mode: lighten;
+}
+
+#bg1 {
+	background: url(/img/Light_Bottom.png);
+	animation:spin 40s linear infinite;
+	z-index: 13;
+	background-size: contain;
+}
+
+#bg2 {
+	background: url(/img/Light_Middle.png);
+	animation:spin 45s linear infinite;
+	z-index: 14;
+	opacity: 0.5;
+	background-size: contain;
+}
+
+#bg3 {
+	background: url(/img/Light_Top.png);
+	animation:spin 68s linear infinite;
+	z-index: 15;
+	opacity: 0.5;
+	background-size: contain;
+}
+
+#noise {
+	background: url(/img/Noise_Tile.png);
+	background-size: 5%;
+	mix-blend-mode: overlay;
+	opacity: 0.3;
+	z-index: 17;
+}
+
+@keyframes spin { 
+	50% { transform:scale(150%) } 
+	10% { transform:scale(100%) } 
+}
+
+#content {
+	z-index: 20;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+#home {
+	display: flex;
+	padding: 0;
+}
+
+#home img {
+	width: 100%;
+	margin: auto;
+}
+
+#our-studio h2 strong {
+	color: #E6849C;
+}
+
+#our-studio p {
+	padding: 0 0 1em 10vw;
+}
+
+#our-studio p:first-of-type {
+	background: url(/img/Door_Wireframe_Small.png) no-repeat;
+	background-size: 1em;
+	background-position-y: 0.3em;
+	
+}
+
+
+#about-us ul {
+	display:grid;
+	width: 100%;
+	grid-template-columns: 33% 33% 33%;
+	margin: 0;
+	padding: 0;
+}
+
+#about-us li {
+	list-style-type: none;
+	padding: 0;
+	display: block;
+	background-image: url(/img/Door_Wireframe_Large.png);
+	background-position-x: 4em;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-clip: none;
+}
+
+#about-us h3 {
+	font-weight: normal;
+}
+
+#about-us > p {
+	padding: 0 0 1em 10vw;
+	background: url(/img/Door_Wireframe_Small.png) no-repeat;
+	background-size: 1em;
+	background-position-y: 0.3em;
+}
+
+#about-us h3 {
+	padding-top: 5em;
+}
+
+#about-us h3 a {
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+#about-us h3 a:hover {
+	text-decoration: underline;
+}
+
+#about-us h3 a strong {
+	display: block;
+}
+
+#about-us li p {
+	padding-right: 5em;
+}
+
+#contact form {
+	padding: 0 0 1em 10vw;
+	background: url(/img/Door_Wireframe_Small.png) no-repeat;
+	background-size: 1em;
+	background-position-y: 0.3em;
+}
+
+#contact fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#contact input {
+	background: rgba(255,255,255, 0.05);
+	border: 2px solid rgba(255,255,255, 0.5);;
+	font-size: 100%;
+	color: white;
+	font-family: 'Roboto Mono', monospace;
+	padding: 1em;
+	width: 30em;
+}
+
+#contact input[type=submit] {
+	border-color: #76f4ff;
+	color: #76f4ff;
+	margin-left: 0.5em;
+	width: 7em;
+}
+
+.email {
+	margin-top: 5em;
+}
+
+.email strong {
+	color: #76f4ff;
+	display: block;
+	font-size: 180%;
+	margin-top: 0.5em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+	letter-spacing: 0.04em;
 }
