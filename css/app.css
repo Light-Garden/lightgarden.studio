@@ -209,7 +209,7 @@ footer {
 #about-us ul {
 	display:grid;
 	width: 100%;
-	grid-template-columns: 33% 33% 33%;
+	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
 	margin: 0;
 	padding: 0;
 }
@@ -218,11 +218,6 @@ footer {
 	list-style-type: none;
 	padding: 0;
 	display: block;
-	background-image: url(/img/Door_Wireframe_Large.png);
-	background-position-x: 4em;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-clip: none;
 }
 
 #about-us h3 {
@@ -230,14 +225,7 @@ footer {
 }
 
 #about-us div > p {
-	padding: 0 0 1em 10vw;
-	background: url(/img/Door_Wireframe_Small.png) no-repeat;
-	background-size: 1em;
-	background-position-y: 0.3em;
-}
-
-#about-us h3 {
-	padding-top: 5em;
+	padding: 0 0 1em 0;
 }
 
 #about-us h3 a {
@@ -254,7 +242,7 @@ footer {
 }
 
 #about-us li p {
-	padding-right: 7em;
+	padding-right: 2em;
 }
 
 #contact form {
