@@ -45,6 +45,16 @@ section h2 {
 	margin-top: 0;
 }
 
+section h2:before {
+	content: '';
+	position: absolute;
+    width: 1.5em;
+    height: 4px;	
+    background-color: #77ff9f;
+    border-radius: 2px;
+	transform: translateY(1.5em);
+}
+
 a.next-section {
 	position:absolute;
 	display: block;
@@ -290,12 +300,14 @@ footer a {
 
 #about-us li {
 	list-style-type: none;
-	padding: 0;
+	padding: 0 7vw 0 0;
 	display: block;
 }
 
 #about-us h3 {
 	font-weight: normal;
+	border-bottom: 2px solid #77ff9f;
+	padding-bottom: 0.5em;
 }
 
 #about-us div > p {
@@ -305,14 +317,11 @@ footer a {
 #about-us h3 a {
 	text-transform: uppercase;
 	text-decoration: none;
+	color: white;
 }
 
 #about-us h3 a:hover {
 	text-decoration: underline;
-}
-
-#about-us h3 a strong {
-	display: block;
 }
 
 #about-us li p {
