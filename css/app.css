@@ -180,8 +180,24 @@ nav li a {
 
 footer {
 	width: 100%;
-	left: 0;
-	margin: 0;
+	background: white;
+	color: black;
+}
+
+footer div {
+	display: grid;
+	padding: 2em 2em 2em 15em;
+	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+	max-width: 95em;
+}
+
+footer p, footer address {
+	font-size: 0.8em;
+	font-style: normal;
+}
+
+footer a {
+	color: black;
 }
 
 #bg div {
