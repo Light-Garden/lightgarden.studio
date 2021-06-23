@@ -37,7 +37,6 @@ function clamp(num, min, max) {
 
 window.addEventListener('scroll', () => {
     const mutations = [];
-
     const runMutations = () => mutations.forEach((m) => m());
 
     animations.forEach((anim) => {
@@ -45,8 +44,7 @@ window.addEventListener('scroll', () => {
       var amount =  clamp(anim.root.getBoundingClientRect().top, -anim.range, anim.range) / anim.range;
 
       if (anim.mono) {
-        amount = clamp(amount, 0, 1);
-      }
+        amount = clamp(amount, 0, 1);      }
   
 
       if (anim.type === 'translate') {
@@ -58,5 +56,26 @@ window.addEventListener('scroll', () => {
       }
     });
 
+    for (var i = sections.length - 1; i >= 0; i--) {
+      console.log(sections[i].getBoundingClientRect().top, sections[i].id);
+      if (sections[i].getBoundingClientRect().top <= 0) {
+        if (currentSection != sections[i].id) {
+          const lastSection = currentSection, s = sections[i];
+          
+          mutations.push(() => {
+            document.body.classList.remove(`current-${lastSection}`);
+            document.body.classList.add(`current-${s.id}`);
+          });
+
+          currentSection = s.id;
+        } 
+        
+        break;
+      }
+    }
+
     requestAnimationFrame(runMutations);
 });
+
+var currentSection = "home";
+document.body.classList.add(`current-${currentSection}`);

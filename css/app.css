@@ -61,6 +61,10 @@ a.next-section {
 	background-size: 3em;
 }
 
+.current-home nav {
+	transform: translateX(-15em);
+}
+
 nav {
 	position: fixed;
 	top: 0;
@@ -69,7 +73,10 @@ nav {
 	height: 100vh;
 	width: 15em;
 	display: flex;
+	transition: transform 0.5s;
+	transition-timing-function: cubic-bezier(0,1,2,5);
 }
+
 
 nav > a {
 	position: absolute;
