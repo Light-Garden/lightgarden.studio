@@ -202,14 +202,7 @@ footer {
 }
 
 #our-studio p {
-	padding: 0 0 1em 10vw;
-}
-
-#our-studio p:first-of-type {
-	background: url(/img/Door_Wireframe_Small.png) no-repeat;
-	background-size: 1em;
-	background-position-y: 0.3em;
-	
+	columns: 600px 2;
 }
 
 
