@@ -46,7 +46,7 @@ const fragShader = `
     vec4 originalG = texture2D(u_originalImage, (newCoords - (u_mouse * 0.01)));
     vec4 originalB = texture2D(u_originalImage, (newCoords - (u_mouse * 0.005)));
     
-    return vec4(originalR.r, originalG.g, originalB.b, 1.0) / div;
+    return vec4(originalR.r, originalG.g, originalB.b, originalR.a + originalG.a + originalB.a) / div;
   }
 
   float blendColorBurn(float base, float blend) {
@@ -75,7 +75,7 @@ const fragShader = `
   }
 
   vec4 blend(vec4 base, vec4 blend) {
-    return vec4(blendf(base.r, blend.r), blendf(base.g, blend.g), blendf(base.b, blend.b), 1.0);
+    return vec4(blendf(base.r, blend.r), blendf(base.g, blend.g), blendf(base.b, blend.b), base.a + blend.a);
   }
 
   void main() {
@@ -132,7 +132,7 @@ const fragShader = `
 function main() {
     // Get A WebGL context
     /** @type {HTMLCanvasElement} */
-    const canvas = document.getElementById("canvas");
+    const canvas = document.getElementById("logo");
     const gl = canvas.getContext("webgl");
     if (!gl) {
       return;
@@ -142,6 +142,7 @@ function main() {
     const originalTexture = twgl.createTexture(gl, {
       src: "/img/LG_Logo_hero.png", 
       crossOrigin: '',
+      premultiplyAlpha: true,
     }, (err, texture, source) => {
       originalImage = source;
     });
