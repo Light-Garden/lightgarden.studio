@@ -61,10 +61,6 @@ a.next-section {
 	background-size: 3em;
 }
 
-.current-home nav {
-	transform: translateX(-15em);
-}
-
 nav {
 	position: fixed;
 	top: 0;
@@ -75,6 +71,10 @@ nav {
 	display: flex;
 	transition: transform 0.5s;
 	transition-timing-function: cubic-bezier(0,1,2,5);
+}
+
+.current-home nav {
+	transform: translateX(-15em);
 }
 
 
@@ -107,7 +107,33 @@ nav ul {
 nav li {
 	list-style-type: none;
 	text-transform: uppercase;
-	margin: 0.5em 0;
+	margin: 1em 0;
+	transition-property: padding-left;
+  	transition-duration: 0.5s;
+}
+
+.current-our-studio #nav-our-studio {
+	padding-left: 2em;
+}
+
+.current-our-studio #nav-our-studio a {
+	opacity: 1.0;
+}
+
+.current-about-us #nav-about-us {
+	padding-left: 2em;
+}
+
+.current-about-us #nav-about-us a {
+	opacity: 1.0;
+}
+
+.current-contact #nav-contact {
+	padding-left: 2em;
+}
+
+.current-contact #nav-contact a {
+	opacity: 1.0;
 }
 
 nav li a {
