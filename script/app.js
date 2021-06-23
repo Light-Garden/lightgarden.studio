@@ -134,6 +134,7 @@ function main() {
     /** @type {HTMLCanvasElement} */
     const canvas = document.getElementById("logo");
     const gl = canvas.getContext("webgl");
+    
     if (!gl) {
       return;
     }
