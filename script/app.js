@@ -10,6 +10,7 @@ sections.forEach((section) => {
         offset: el.dataset.offset || 200,
         range: el.dataset.range || 500,
         axis: el.dataset.axis || 'y',
+        mono: el.dataset.mono,
         root: section
       });
     }
@@ -19,6 +20,7 @@ sections.forEach((section) => {
         el: el,
         type: 'opacity',
         range: el.dataset.range || 500,
+        mono: el.dataset.mono,
         root: section
       });
     }
@@ -34,26 +36,27 @@ function clamp(num, min, max) {
 }
 
 window.addEventListener('scroll', () => {
+    const mutations = [];
+
+    const runMutations = () => mutations.forEach((m) => m());
+
     animations.forEach((anim) => {
       const el = anim.el;
-      const amount =  clamp(anim.root.getBoundingClientRect().top, -anim.range, anim.range) / anim.range;
+      var amount =  clamp(anim.root.getBoundingClientRect().top, -anim.range, anim.range) / anim.range;
+
+      if (anim.mono) {
+        amount = clamp(amount, 0, 1);
+      }
+  
 
       if (anim.type === 'translate') {
-        el.style.transform = `translate${anim.axis.toUpperCase()}(${lerp(0.0, anim.offset, amount)}px)`;
+        mutations.push(() => el.style.transform = `translate${anim.axis.toUpperCase()}(${lerp(0.0, anim.offset, amount)}px)`);
       }
 
       if (anim.type === 'opacity') { 
-        el.style.opacity = lerp(1.0, 0.0, Math.abs(amount));
+        mutations.push(() => el.style.opacity = lerp(1.0, 0.0, Math.abs(amount)));
       }
     });
+
+    requestAnimationFrame(runMutations);
 });
-
-
-/*
-
-top = 0
-range = 50
-
-
-
-*/
