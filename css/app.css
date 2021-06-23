@@ -45,7 +45,7 @@ section h2 {
 	margin-top: 0;
 }
 
-section h2:before {
+#about-us h2:before, #contact h2:before {
 	content: '';
 	position: absolute;
     width: 1.5em;
@@ -81,10 +81,11 @@ nav {
 	display: flex;
 	transition: transform 0.5s;
 	transition-timing-function: cubic-bezier(0,1,2,5);
+	transform: translateX(-15em);
 }
 
-.current-home nav {
-	transform: translateX(-15em);
+nav.scrolling {
+	transform: translateX(0);
 }
 
 
@@ -96,7 +97,7 @@ nav > a {
 }
 
 nav a img {
-	width: 50%;
+	width: 40%;
 	transition: transform 0.5s;
 	transform-origin: center;
 	transition-timing-function: cubic-bezier(0,1,2,5);
@@ -133,6 +134,18 @@ nav li a:before {
 	transform: translate(-4em, 8px);
 	transition-property: transform;
   	transition-duration: 0.5s;
+}
+
+.current-home #nav-home {
+	padding-left: 2em;
+}
+
+.current-home #nav-home a {
+	opacity: 1.0;
+}
+
+.current-home #nav-home a:before {
+	transform: translate(0, 0.5em);
 }
 
 .current-our-studio #nav-our-studio {

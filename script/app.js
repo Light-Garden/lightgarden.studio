@@ -36,8 +36,17 @@ function clamp(num, min, max) {
 }
 
 window.addEventListener('scroll', () => {
-    const mutations = [];
+    const mutations = []; 
+    var scrolling = false;
     const runMutations = () => mutations.forEach((m) => m());
+
+    if (!scrolling && window.pageYOffset > 50) {
+      document.querySelector('nav').classList.add('scrolling');
+      scrolling = true;
+    } else {
+      document.querySelector('nav').classList.remove('scrolling');
+      scrolling = false;
+    }
 
     animations.forEach((anim) => {
       const el = anim.el;
@@ -57,7 +66,6 @@ window.addEventListener('scroll', () => {
     });
 
     for (var i = sections.length - 1; i >= 0; i--) {
-      console.log(sections[i].getBoundingClientRect().top, sections[i].id);
       if (sections[i].getBoundingClientRect().top <= 0) {
         if (currentSection != sections[i].id) {
           const lastSection = currentSection, s = sections[i];
@@ -69,7 +77,7 @@ window.addEventListener('scroll', () => {
 
           currentSection = s.id;
         } 
-        
+
         break;
       }
     }
