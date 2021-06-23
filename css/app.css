@@ -112,12 +112,29 @@ nav li {
   	transition-duration: 0.5s;
 }
 
+nav li a:before {
+	content: '';
+	position: absolute;
+    width: 4em;
+    height: 3px;
+    left: 0;
+    background-color: #77ff9f;
+    border-radius: 2px;
+	transform: translate(-4em, 8px);
+	transition-property: transform;
+  	transition-duration: 0.5s;
+}
+
 .current-our-studio #nav-our-studio {
 	padding-left: 2em;
 }
 
 .current-our-studio #nav-our-studio a {
 	opacity: 1.0;
+}
+
+.current-our-studio #nav-our-studio a:before {
+	transform: translate(0, 0.5em);
 }
 
 .current-about-us #nav-about-us {
@@ -128,6 +145,11 @@ nav li {
 	opacity: 1.0;
 }
 
+.current-about-us #nav-about-us a:before {
+	transform: translate(0,  0.5em);
+}
+
+
 .current-contact #nav-contact {
 	padding-left: 2em;
 }
@@ -136,16 +158,16 @@ nav li {
 	opacity: 1.0;
 }
 
+.current-contact #nav-contact a:before {
+	transform: translate(0,  0.5em);
+}
+
 nav li a {
 	text-decoration: none;
 	color: white;
 	opacity: 0.3;
 	transition-property: opacity;
   	transition-duration: 0.5s;
-}
-
-nav li a:hover {
-	opacity: 1;
 }
 
 #bg {
