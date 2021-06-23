@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 html {
 	scroll-behavior: smooth;
@@ -7,7 +7,7 @@ html {
 body {
     background: url(/img/BG.png) black;
 	color: white;
-	font-family: 'Roboto Mono', monospace;
+	font-family: 'Roboto', sans-serif;
 	margin: 0;
 }
 
@@ -15,8 +15,9 @@ body a {
 	color: #76f4ff;
 }
 
-h1, h2, h3 {
-	font-family: 'Roboto', sans-serif;
+section p {
+	font-size: 1.2em;
+	line-height: 1.6;
 }
 
 section {
@@ -25,6 +26,7 @@ section {
 	box-sizing: border-box;
 	display: flex;
 	position: relative;
+	padding-bottom: 5em;
 }
 
 section:nth-of-type(even) {
@@ -66,6 +68,7 @@ nav {
 	height: 100vh;
 	width: 15em;
 	display: flex;
+	font-size: 0.8em;
 }
 
 nav > a {
@@ -243,13 +246,6 @@ footer {
 
 #about-us li p {
 	padding-right: 2em;
-}
-
-#contact form {
-	padding: 0 0 1em 10vw;
-	background: url(/img/Door_Wireframe_Small.png) no-repeat;
-	background-size: 1em;
-	background-position-y: 0.3em;
 }
 
 #contact fieldset {
