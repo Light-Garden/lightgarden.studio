@@ -70,4 +70,5 @@ function setVh() {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
+setVh();
 window.addEventListener('resize', setVh);
