@@ -71,20 +71,17 @@ var currentSection = "home";
 document.body.classList.add(`current-${currentSection}`);
 
 document.querySelector('.hamburger-menu').addEventListener('click', (e) => {
+  e.target.classList.toggle('open');
   nav.classList.toggle('open');
 });
 
 document.querySelector('.menu').addEventListener('click', (e) => {
   nav.classList.remove('open');
-})
-
-document.querySelector('.header a').addEventListener('click', (e) => {
-  nav.classList.remove('open');
-})
+  document.querySelector('.hamburger-menu').classList.remove('open');
+});
 
 // vh fix for mobile browsers
 function setVh() {
-  // We execute the same script as before
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
