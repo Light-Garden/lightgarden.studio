@@ -6,10 +6,11 @@ html {
 }
 
 body {
-    background: url(/img/BG.png) black;
+    background: black;
 	color: white;
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 body a {
@@ -24,10 +25,10 @@ section p {
 section {
 	width: 100%;
 	min-height: 100vh;
-	box-sizing: border-box;
 	display: flex;
 	position: relative;
-	padding-bottom: 5em;
+	padding: 1em 0 5em 0;
+	box-sizing: border-box;
 }
 
 section:nth-of-type(even) {
@@ -82,16 +83,15 @@ nav {
 	transition: transform 0.5s;
 	transition-timing-function: cubic-bezier(0,1,2,5);
 	transform: translateX(-15em);
+	box-sizing: border-box;
 }
 
 nav.scrolling {
 	transform: translateX(0);
 }
 
-
-nav > a {
+nav .header {
 	position: absolute;
-	display: block;
 	top: 2em;
 	left: 2em;
 }
@@ -109,10 +109,12 @@ nav a:hover img {
 }
 
 
-nav ul {
+nav .menu {
 	margin: auto 2.5em;
-	padding: 0;
+}
 
+nav ul {
+	padding: 0;
 }
 
 nav li {
@@ -123,74 +125,16 @@ nav li {
   	transition-duration: 0.5s;
 }
 
-nav li a:before {
-	content: '';
-	position: absolute;
-    width: 4em;
-    height: 3px;
-    left: 0;
-    background-color: #77ff9f;
-    border-radius: 2px;
-	transform: translate(-4em, 8px);
-	transition-property: transform;
-  	transition-duration: 0.5s;
-}
-
-.current-home #nav-home {
-	padding-left: 2em;
-}
-
-.current-home #nav-home a {
-	opacity: 1.0;
-}
-
-.current-home #nav-home a:before {
-	transform: translate(0, 0.5em);
-}
-
-.current-our-studio #nav-our-studio {
-	padding-left: 2em;
-}
-
-.current-our-studio #nav-our-studio a {
-	opacity: 1.0;
-}
-
-.current-our-studio #nav-our-studio a:before {
-	transform: translate(0, 0.5em);
-}
-
-.current-about-us #nav-about-us {
-	padding-left: 2em;
-}
-
-.current-about-us #nav-about-us a {
-	opacity: 1.0;
-}
-
-.current-about-us #nav-about-us a:before {
-	transform: translate(0,  0.5em);
-}
-
-
-.current-contact #nav-contact {
-	padding-left: 2em;
-}
-
-.current-contact #nav-contact a {
-	opacity: 1.0;
-}
-
-.current-contact #nav-contact a:before {
-	transform: translate(0,  0.5em);
-}
-
 nav li a {
 	text-decoration: none;
 	color: white;
 	opacity: 0.3;
 	transition-property: opacity;
   	transition-duration: 0.5s;
+}
+
+.hamburger-menu {
+	display: none;
 }
 
 #bg {
@@ -210,13 +154,14 @@ footer {
 footer div {
 	display: grid;
 	padding: 2em 2em 2em 15em;
-	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+	grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
 	max-width: 95em;
 }
 
 footer p, footer address {
 	font-size: 0.8em;
 	font-style: normal;
+	padding-right: 1em;
 }
 
 footer a {
@@ -283,13 +228,7 @@ footer a {
 	margin: auto;
 }
 
-#logo {
-	width: 100%;
-	height: 30%;
-	margin: auto;
-}
-
-#home > img {
+#home img {
 	width: 50%;
 	margin: auto;
 }
@@ -376,4 +315,210 @@ footer a {
 	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
 	letter-spacing: 0.04em;
+}
+
+
+/* Medium screen widths */
+
+@media screen and (max-width: 1000px) {
+
+	#home img {
+		width: 70%;
+	}
+
+	section p, #about-us h3 {
+		font-size: 1em;
+		line-height: 1.4;
+	}
+	
+	section h2 {
+		font-size: 3em;
+		margin-top: 0;
+	}
+
+	#contact input {
+		width: 10em;
+	}
+
+}
+
+@media screen and (min-width: 601px) {
+	nav li a:before {
+		content: '';
+		position: absolute;
+		width: 4em;
+		height: 3px;
+		left: 0;
+		background-color: #77ff9f;
+		border-radius: 2px;
+		transform: translate(-4em, 8px);
+		transition-property: transform;
+		transition-duration: 0.5s;
+	}
+
+	.current-home #nav-home {
+		padding-left: 2em;
+	}
+
+	.current-home #nav-home a {
+		opacity: 1.0;
+	}
+
+	.current-home #nav-home a:before {
+		transform: translate(0, 0.5em);
+	}
+
+	.current-our-studio #nav-our-studio {
+		padding-left: 2em;
+	}
+
+	.current-our-studio #nav-our-studio a {
+		opacity: 1.0;
+	}
+
+	.current-our-studio #nav-our-studio a:before {
+		transform: translate(0, 0.5em);
+	}
+
+	.current-about-us #nav-about-us {
+		padding-left: 2em;
+	}
+
+	.current-about-us #nav-about-us a {
+		opacity: 1.0;
+	}
+
+	.current-about-us #nav-about-us a:before {
+		transform: translate(0,  0.5em);
+	}
+
+
+	.current-contact #nav-contact {
+		padding-left: 2em;
+	}
+
+	.current-contact #nav-contact a {
+		opacity: 1.0;
+	}
+
+	.current-contact #nav-contact a:before {
+		transform: translate(0,  0.5em);
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	#home img {
+		width: 80%;
+	}
+
+	section {
+		padding-top: 4em;
+	}
+
+	section p, #about-us h3 {
+		font-size: 0.8em;
+		line-height: 1.4;
+	}
+	
+	section h2 {
+		font-size: 1.5em;
+		margin-top: 0;
+	}
+
+	#contact input {
+		width: 8em;
+		font-size: 80%;
+	}
+
+	section > div {
+		margin-left: 2em;
+	}
+
+	footer div {
+		padding-left: 2em;
+	}
+
+	.email strong {
+		font-size: 120%;
+	}
+
+	/* need these? 
+	a.next-section {
+		display: none;
+	}*/
+
+	nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 30;
+		width: 100vw;
+		height: 3em;
+		transform: translateY(-3em);
+	}
+
+	nav .menu {
+		position: absolute;
+		background: white;
+		display: flex;
+		padding: 0;
+		width: 100vw;
+		height: 100vh;
+		transform: translateX(-100vw);
+		transition: transform 0.5s;
+		transition-timing-function: cubic-bezier(0,1,2,5);
+		margin: 0;
+	}
+
+	nav ul {
+		margin: auto 0;
+		width: 100vw;
+	}
+
+	nav.open .menu {
+		transform: translateX(0);
+	}
+
+	nav.scrolling {
+		transform: translateY(0);
+	}
+
+	nav .header {
+		background: black;
+		width: 100vw;
+		top: 0;
+		left: 0;
+		height: 2em;
+		padding: 0.5em;
+		z-index: 40;
+	}
+	
+	nav a img {
+		width: 2em;
+	}
+
+	nav li {
+		text-align: center;
+	}
+	
+	nav li a:before {
+		content: '';
+		border: none;
+	}
+
+	nav li a {
+		font-size: 1.6em;
+		letter-spacing: 0.2em;
+		color: black;
+	}
+
+	.hamburger-menu {
+		position: absolute;
+		display: block;
+		top: 0.5em;
+		right: 1.5em;
+		cursor: pointer;
+	}
+
 }

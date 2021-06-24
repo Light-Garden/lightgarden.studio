@@ -41,10 +41,10 @@ window.addEventListener('scroll', () => {
     const runMutations = () => mutations.forEach((m) => m());
 
     if (!scrolling && window.pageYOffset > 50) {
-      document.querySelector('nav').classList.add('scrolling');
+      mutations.push(() => document.querySelector('nav').classList.add('scrolling'));
       scrolling = true;
     } else {
-      document.querySelector('nav').classList.remove('scrolling');
+      mutations.push(() => document.querySelector('nav').classList.remove('scrolling'));
       scrolling = false;
     }
 
@@ -87,3 +87,13 @@ window.addEventListener('scroll', () => {
 
 var currentSection = "home";
 document.body.classList.add(`current-${currentSection}`);
+
+var nav = document.querySelector('nav');
+
+document.querySelector('.hamburger-menu').addEventListener('click', (e) => {
+  nav.classList.toggle('open');
+});
+
+document.querySelector('.menu').addEventListener('click', (e) => {
+  nav.classList.remove('open');
+})
