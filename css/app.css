@@ -298,14 +298,15 @@ footer a {
 #who ul {
 	display:grid;
 	width: 100%;
-	grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+	grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+	grid-gap: 2em 6em;
 	margin: 0;
 	padding: 0;
 }
 
 #who li {
 	list-style-type: none;
-	padding: 0 7vw 0 0;
+	padding: 0;
 	display: block;
 }
 

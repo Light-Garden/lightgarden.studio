@@ -23,7 +23,7 @@ window.addEventListener('scroll', () => {
     }
 
     parabg.forEach((p) => {
-      p.style.backgroundPositionY = `-${window.pageYOffset * p.dataset.speed}px`;
+      mutations.push (() => p.style.backgroundPositionY = `-${window.pageYOffset * p.dataset.speed}px`);
     });
 
     for (var i = sections.length - 1; i >= 0; i--) {
@@ -71,4 +71,4 @@ function setVh() {
 }
 
 setVh();
-window.addEventListener('resize', setVh);
+// window.addEventListener('resize', setVh);
