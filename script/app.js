@@ -62,3 +62,12 @@ document.querySelector('.menu').addEventListener('click', (e) => {
 document.querySelector('.header a').addEventListener('click', (e) => {
   nav.classList.remove('open');
 })
+
+// vh fix for mobile browsers
+function setVh() {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', setVh);
