@@ -188,30 +188,25 @@ footer a {
 	width: 200%;
 	height: 200%;
 	background-position: center;
-	mix-blend-mode: lighten;
 }
 
 #bg1 {
 	background: url(/img/Light_Bottom.png);
 	animation:spin 40s linear infinite;
 	z-index: 13;
-	background-size: contain;
 }
 
 #bg2 {
 	background: url(/img/Light_Middle.png);
 	animation:spin 45s linear infinite;
 	z-index: 14;
-	opacity: 0.5;
-	background-size: contain;
 }
 
 #bg3 {
 	background: url(/img/Light_Top.png);
 	animation:spin 68s linear infinite;
 	z-index: 15;
-	opacity: 0.5;
-	background-size: contain;
+	mix-blend-mode: lighten;
 }
 
 #noise {
@@ -346,12 +341,12 @@ footer a {
 	font-family: 'Roboto Mono', monospace;
 	padding: 1em;
 	width: 30em;
-	border-radius: 2em;
+	border-radius: 6px;
 }
 
 #contact input[type=submit] {
-	border-color: #76f4ff;
-	color: #76f4ff;
+	border-color: #77ff9f;
+	color: #77ff9f;
 	margin-left: 0.5em;
 	width: 7em;
 }
@@ -485,7 +480,7 @@ footer a {
 	}
 
 	section > div {
-		margin-left: 2em;
+		margin: auto 2em auto 2em;
 	}
 
 	footer div {
