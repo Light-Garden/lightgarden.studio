@@ -22,9 +22,9 @@ window.addEventListener('scroll', () => {
       scrolling = false;
     }
 
-    parabg.forEach((p) => {
-      mutations.push (() => p.style.backgroundPositionY = `-${window.pageYOffset * p.dataset.speed}px`);
-    });
+    //parabg.forEach((p) => {
+    //  mutations.push (() => p.style.backgroundPositionY = `-${window.pageYOffset * p.dataset.speed}px`);
+    //});
 
     for (var i = sections.length - 1; i >= 0; i--) {
       if (sections[i].getBoundingClientRect().top <= (sections[i].offsetHeight/2)) {
