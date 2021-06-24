@@ -199,21 +199,21 @@ footer a {
 
 #bg1 {
 	background: url(/img/Light_Bottom.png);
-	animation:spin 40s linear infinite;
+	aanimation:spin 40s linear infinite;
 	background-size: contain;
 	z-index: 13;
 }
 
 #bg2 {
 	background: url(/img/Light_Middle.png);
-	animation:spin 45s linear infinite;
+	aanimation:spin 45s linear infinite;
 	background-size: contain;
 	z-index: 14;
 }
 
 #bg3 {
 	background: url(/img/Light_Top.png);
-	animation:spin 68s linear infinite;
+	aanimation:spin 68s linear infinite;
 	background-size: contain;
 	z-index: 15;
 	mix-blend-mode: lighten;
@@ -233,6 +233,7 @@ footer a {
 
 .parabg {
 	background-position: 0px 0px;
+	background-repeat: repeat;
 	position: absolute;
 	top:0;
 	left: 0;
@@ -631,4 +632,7 @@ footer a {
 		background-size: cover;
 	}
 
+	.parabg {
+		background-size: 200%;
+	}
 }
