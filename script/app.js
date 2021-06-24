@@ -42,7 +42,7 @@ window.addEventListener('scroll', throttle(() => {
     for (var i = sectionMap.length - 1; i >= 0; i--) {
       if (scroll > sectionMap[i].bound) {
         const s = sectionMap[i].section;
-        
+
         if (currentSection != s.id) {
           const lastSection = currentSection;
           
@@ -63,7 +63,7 @@ window.addEventListener('scroll', throttle(() => {
 
 window.addEventListener('scroll', () => {
   parabg.forEach((p) => {
-    p.style.backgroundPositionY = `-${window.pageYOffset * p.dataset.speed}px`;
+    p.style.transform = `translateY(-${window.pageYOffset * p.dataset.speed}px)`;
   });
 });
 
@@ -90,4 +90,4 @@ function setVh() {
 }
 
 setVh();
-// window.addEventListener('resize', setVh);
+window.addEventListener('resize', setVh);
