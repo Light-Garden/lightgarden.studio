@@ -1,3 +1,49 @@
+const sections = document.querySelectorAll('.parallax-root');
+const animations = [];
+
+sections.forEach((section) => {
+  section.querySelectorAll('.parallax').forEach((el) => {
+    if (el.classList.contains("translate")) {
+      animations.push({
+        el: el,
+        type: 'translate',
+        offset: el.dataset.offset || 200,
+        range: el.dataset.range || 500,
+        axis: el.dataset.axis || 'y',
+        mono: el.dataset.mono,
+        root: section
+      });
+    }
+
+    if (el.classList.contains("fade")) {
+      animations.push({
+        el: el,
+        type: 'opacity',
+        range: el.dataset.range || 500,
+        mono: el.dataset.mono,
+        root: section
+      });
+    }
+  });
+});
+
+animations.forEach((anim) => {
+  const el = anim.el;
+  var amount =  clamp(anim.root.getBoundingClientRect().top, -anim.range, anim.range) / anim.range;
+
+  if (anim.mono) {
+    amount = clamp(amount, 0, 1);      }
+
+
+  if (anim.type === 'translate') {
+    mutations.push(() => el.style.transform = `translate${anim.axis.toUpperCase()}(${lerp(0.0, anim.offset, amount)}px)`);
+  }
+
+  if (anim.type === 'opacity') { 
+    mutations.push(() => el.style.opacity = lerp(1.0, 0.0, Math.abs(amount)));
+  }
+});
+
 const vertexShader = `
   attribute vec2 position;
   attribute vec2 texcoord;
