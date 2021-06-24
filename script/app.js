@@ -1,5 +1,7 @@
 const sections = document.querySelectorAll('section');
 const parabg = document.querySelectorAll('.parabg');
+const nav = document.querySelector('nav');
+const sectionMap = [];
 
 function lerp(start, end, amt) {
   return (1 - amt) * start + amt * end;
@@ -19,32 +21,35 @@ function throttle(fn, wait) {
   }
 }
 
+sections.forEach((s) => {
+  const b = s.getBoundingClientRect().top + window.pageYOffset - (s.offsetHeight/2);
+  sectionMap.push({ bound: b, section: s });
+});
+
 window.addEventListener('scroll', throttle(() => {
-    const mutations = []; 
+    const mutations = [], scroll = window.pageYOffset; 
     var scrolling = false;
     const runMutations = () => mutations.forEach((m) => m());
 
-    if (!scrolling && window.pageYOffset > 50) {
-      //mutations.push(() =>
-       document.querySelector('nav').classList.add('scrolling')
-       //);
+    if (!scrolling && scroll > 50) {
+      mutations.push(() => nav.classList.add('scrolling'));
       scrolling = true;
     } else {
-      //mutations.push(() => 
-      document.querySelector('nav').classList.remove('scrolling')
-      //);
+      mutations.push(() => nav.classList.remove('scrolling'));
       scrolling = false;
     }
 
-    for (var i = sections.length - 1; i >= 0; i--) {
-      if (sections[i].getBoundingClientRect().top <= (sections[i].offsetHeight/2)) {
-        if (currentSection != sections[i].id) {
-          const lastSection = currentSection, s = sections[i];
+    for (var i = sectionMap.length - 1; i >= 0; i--) {
+      if (scroll > sectionMap[i].bound) {
+        const s = sectionMap[i].section;
+        
+        if (currentSection != s.id) {
+          const lastSection = currentSection;
           
-          //mutations.push(() => {
+          mutations.push(() => {
             document.body.classList.remove(`current-${lastSection}`);
             document.body.classList.add(`current-${s.id}`);
-          //});
+          });
 
           currentSection = s.id;
         } 
@@ -54,7 +59,7 @@ window.addEventListener('scroll', throttle(() => {
     }
 
     requestAnimationFrame(runMutations);
-}, 100));
+}, 10));
 
 window.addEventListener('scroll', () => {
   parabg.forEach((p) => {
@@ -64,8 +69,6 @@ window.addEventListener('scroll', () => {
 
 var currentSection = "home";
 document.body.classList.add(`current-${currentSection}`);
-
-var nav = document.querySelector('nav');
 
 document.querySelector('.hamburger-menu').addEventListener('click', (e) => {
   nav.classList.toggle('open');
