@@ -26,7 +26,6 @@ section p {
 section {
 	width: 100%;
 	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
 	display: flex;
 	position: relative;
 	z-index: 20;
@@ -94,7 +93,6 @@ nav {
 	left: 0;
 	z-index: 30;
 	height: 100vh;
-	height: calc(var(--vh, 1vh) * 100);
 	width: 15em;
 	display: flex;
 	transition: transform 0.5s;
@@ -512,6 +510,7 @@ footer a {
 
 	section {
 		padding-top: 4em;
+		min-height: calc(var(--initialvh, 1vh) * 100);
 	}
 
 	section p, #about-us h3 {
@@ -554,9 +553,8 @@ footer a {
 		background: #E9E9E9;
 		padding: 0;
 		margin: 0;
-		width: 100vw;
-		height: 100vh;
 		height: calc(var(--vh, 1vh) * 100);
+		width: 100vw;
 		transform: translateX(100vw);
 		transition: transform 0.5s;
 		transition-timing-function: cubic-bezier(0,1,2,1);

@@ -81,10 +81,11 @@ document.querySelector('.menu').addEventListener('click', (e) => {
 });
 
 // vh fix for mobile browsers
-function setVh() {
+function setVh(name) {
   let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty(`--${name || ''}vh`, `${vh}px`);
 }
 
+setVh('initial');
 setVh();
 window.addEventListener('resize', setVh);
