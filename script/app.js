@@ -9,7 +9,17 @@ function clamp(num, min, max) {
   return Math.min(Math.max(num, min), max);
 }
 
-window.addEventListener('scroll', () => {
+function throttle(fn, wait) {
+  var time = Date.now();
+  return function() {
+    if ((time + wait - Date.now()) < 0) {
+      fn();
+      time = Date.now();
+    }
+  }
+}
+
+window.addEventListener('scroll', throttle(() => {
     const mutations = []; 
     var scrolling = false;
     const runMutations = () => mutations.forEach((m) => m());
@@ -31,10 +41,10 @@ window.addEventListener('scroll', () => {
         if (currentSection != sections[i].id) {
           const lastSection = currentSection, s = sections[i];
           
-          /*mutations.push(() => {
+          mutations.push(() => {
             document.body.classList.remove(`current-${lastSection}`);
             document.body.classList.add(`current-${s.id}`);
-          });*/
+          });
 
           currentSection = s.id;
         } 
@@ -44,7 +54,7 @@ window.addEventListener('scroll', () => {
     }
 
     requestAnimationFrame(runMutations);
-});
+}, 100));
 
 var currentSection = "home";
 document.body.classList.add(`current-${currentSection}`);
