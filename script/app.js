@@ -21,10 +21,13 @@ function throttle(fn, wait) {
   }
 }
 
-sections.forEach((s) => {
-  const b = s.getBoundingClientRect().top + window.pageYOffset - (s.offsetHeight/2);
-  sectionMap.push({ bound: b, section: s });
-});
+function buildSectionMap() {
+  sectionMap.splice(0, sectionMap.length);
+  sections.forEach((s) => {
+    const b = s.getBoundingClientRect().top + window.pageYOffset - (s.offsetHeight/2);
+    sectionMap.push({ bound: b, section: s });
+  });
+}
 
 window.addEventListener('scroll', throttle(() => {
     const mutations = [], scroll = window.pageYOffset; 
@@ -88,4 +91,9 @@ function setVh(name) {
 
 setVh('initial');
 setVh();
-window.addEventListener('resize', setVh);
+buildSectionMap();
+
+window.addEventListener('resize', () => {
+  buildSectionMap();
+  setVh();
+});
