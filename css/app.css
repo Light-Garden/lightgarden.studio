@@ -193,18 +193,21 @@ footer a {
 #bg1 {
 	background: url(/img/Light_Bottom.png);
 	animation:spin 40s linear infinite;
+	background-size: contain;
 	z-index: 13;
 }
 
 #bg2 {
 	background: url(/img/Light_Middle.png);
 	animation:spin 45s linear infinite;
+	background-size: contain;
 	z-index: 14;
 }
 
 #bg3 {
 	background: url(/img/Light_Top.png);
 	animation:spin 68s linear infinite;
+	background-size: contain;
 	z-index: 15;
 	mix-blend-mode: lighten;
 }
