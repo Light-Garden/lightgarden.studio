@@ -222,8 +222,8 @@ footer a {
 }
 
 #noise {
-	background: url(/img/Noise_Tile.png);
-	background-size: 5%;
+	background: url(/img/Noise_Tile_Small.png);
+	background-size: 2em;
 	mix-blend-mode: overlay;
 	opacity: 0.3;
 	z-index: 17;
