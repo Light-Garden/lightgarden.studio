@@ -216,7 +216,7 @@ footer a {
 	animation:spin 68s linear infinite;
 	background-size: contain;
 	z-index: 15;
-	mix-blend-mode: lighten;
+	mmix-blend-mode: lighten;
 }
 
 #noise {
