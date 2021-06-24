@@ -195,11 +195,12 @@ footer a {
 	width: 200%;
 	height: 200%;
 	background-position: center;
+	will-change: transform;
 }
 
 #bg1 {
 	background: url(/img/Light_Bottom.png);
-	aanimation:spin 40s linear infinite;
+	animation:spin 40s linear infinite;
 	background-size: contain;
 	z-index: 13;
 }
