@@ -25,10 +25,14 @@ window.addEventListener('scroll', throttle(() => {
     const runMutations = () => mutations.forEach((m) => m());
 
     if (!scrolling && window.pageYOffset > 50) {
-      mutations.push(() => document.querySelector('nav').classList.add('scrolling'));
+      //mutations.push(() =>
+       document.querySelector('nav').classList.add('scrolling')
+       //);
       scrolling = true;
     } else {
-      mutations.push(() => document.querySelector('nav').classList.remove('scrolling'));
+      //mutations.push(() => 
+      document.querySelector('nav').classList.remove('scrolling')
+      //);
       scrolling = false;
     }
 
@@ -37,10 +41,10 @@ window.addEventListener('scroll', throttle(() => {
         if (currentSection != sections[i].id) {
           const lastSection = currentSection, s = sections[i];
           
-          mutations.push(() => {
+          //mutations.push(() => {
             document.body.classList.remove(`current-${lastSection}`);
             document.body.classList.add(`current-${s.id}`);
-          });
+          //});
 
           currentSection = s.id;
         } 
