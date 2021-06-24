@@ -206,14 +206,14 @@ footer a {
 
 #bg2 {
 	background: url(/img/Light_Middle.png);
-	aanimation:spin 45s linear infinite;
+	animation:spin 45s linear infinite;
 	background-size: contain;
 	z-index: 14;
 }
 
 #bg3 {
 	background: url(/img/Light_Top.png);
-	aanimation:spin 68s linear infinite;
+	animation:spin 68s linear infinite;
 	background-size: contain;
 	z-index: 15;
 	mix-blend-mode: lighten;
