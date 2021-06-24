@@ -97,3 +97,7 @@ document.querySelector('.hamburger-menu').addEventListener('click', (e) => {
 document.querySelector('.menu').addEventListener('click', (e) => {
   nav.classList.remove('open');
 })
+
+document.querySelector('.header a').addEventListener('click', (e) => {
+  nav.classList.remove('open');
+})

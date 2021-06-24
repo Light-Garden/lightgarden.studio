@@ -519,6 +519,16 @@ footer a {
 		top: 0.5em;
 		right: 1.5em;
 		cursor: pointer;
+		background: url(/img/Hamburger_icon.svg) no-repeat;
+		background-size: cover;
+		width: 2em;
+		height: 2em;
+
+	}
+
+	nav.open .hamburger-menu {
+		background:  url(/img/Icon_Close.svg) no-repeat;
+		background-size: cover;
 	}
 
 }
