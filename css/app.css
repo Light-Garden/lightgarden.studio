@@ -570,12 +570,15 @@ footer a {
 
 	nav .menu {
 		margin: auto 0;
-		padding: 0;
+		background: url(/img/Menu_Icon.png) no-repeat;
+		background-size: 4em;
+		background-position-x: center;
 	}
 
 	nav ul {
 		margin: auto 0;
 		width: 100vw;
+		padding-top: 5em;
 	}
 
 	nav.open {
@@ -602,19 +605,16 @@ footer a {
 		top: 0.5em;
 		right: 0.5em;
 		cursor: pointer;
-		background: url(/img/Hamburger_icon.svg) no-repeat;
+		background: url(/img/Icon_Menu_Open.svg) no-repeat;
 		background-size: cover;
-		background-color: black;
-		border: 0.5em solid black;
-		border-radius: 1.5em;
-		width: 1.5em;
-		height: 1.5em;
+		width: 2.5em;
+		height: 2.5em;
 		z-index: 40;
 
 	}
 
 	.hamburger-menu.open {
-		background-image:  url(/img/Icon_Close.svg);
+		background-image:  url(/img/Icon_Menu_Close.svg);
 	}
 
 	.parabg {
