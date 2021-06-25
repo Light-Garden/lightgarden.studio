@@ -52,7 +52,7 @@ section h2 {
 }
 
 section h2 strong {
-	color: #ffff94;
+	color: #8AFFF8;
 }
 
 section h2:after {
@@ -195,21 +195,18 @@ footer a {
 
 #bg1 {
 	background: url(/img/Light_Bottom.png);
-	animation:spin 10s linear infinite;
 	background-size: contain;
 	z-index: 13;
 }
 
 #bg2 {
 	background: url(/img/Light_Middle.png);
-	animation:spin 15s linear infinite;
 	background-size: contain;
 	z-index: 14;
 }
 
 #bg3 {
 	background: url(/img/Light_Top.png);
-	animation:spin 28s linear infinite;
 	background-size: contain;
 	z-index: 15;
 	mix-blend-mode: lighten;
@@ -402,7 +399,7 @@ footer a {
 }
 
 .email strong {
-	color: #ffff94;
+	color: #8AFFF8;
 	display: block;
 	font-size: 180%;
 	font-weight: normal;
@@ -435,6 +432,18 @@ footer a {
 }
 
 @media screen and (min-width: 751px) {
+	#bg1 {
+		animation:spin 10s linear infinite;
+	}
+	
+	#bg2 {
+		animation:spin 15s linear infinite;
+	}
+	
+	#bg3 {
+		animation:spin 28s linear infinite;
+	}
+
 	nav li a:before {
 		content: '';
 		position: absolute;
