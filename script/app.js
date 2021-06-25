@@ -51,7 +51,8 @@ window.addEventListener('scroll', throttle(() => {
           
           mutations.push(() => {
             document.body.classList.remove(`current-${lastSection}`);
-            s.classList.add(`current-${s.id}`, 'section-in');
+            document.body.classList.add(`current-${s.id}`);
+            s.classList.add('section-in');
           });
 
           currentSection = s.id;
