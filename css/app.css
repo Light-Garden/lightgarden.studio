@@ -185,28 +185,28 @@ footer a {
 
 #bg div {
 	position: absolute;
-	top: -50%;
-	left: -50%;
-	width: 200%;
-	height: 200%;
+	top: -50vh;
+	left: -50vw;
+	width: 200vw;
+	height: 200vh;
 	background-position: center;
 	will-change: transform;
 }
 
 #bg1 {
-	background: url(/img/Light_Bottom.png);
+	background: url(/img/Light_Bottom_Fade.png);
 	background-size: contain;
 	z-index: 13;
 }
 
 #bg2 {
-	background: url(/img/Light_Middle.png);
+	background: url(/img/Light_Middle_Fade.png);
 	background-size: contain;
 	z-index: 14;
 }
 
 #bg3 {
-	background: url(/img/Light_Top.png);
+	background: url(/img/Light_Top_Fade.png);
 	background-size: contain;
 	z-index: 15;
 	mix-blend-mode: lighten;
