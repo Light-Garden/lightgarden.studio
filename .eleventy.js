@@ -6,4 +6,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("script");
     eleventyConfig.addPassthroughCopy("favicon");
+    eleventyConfig.addPassthroughCopy('sitemap.xml');
+    eleventyConfig.addPassthroughCopy('robots.txt');
   };
