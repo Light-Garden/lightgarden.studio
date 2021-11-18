@@ -17,7 +17,7 @@ body a {
 	color: #76f4ff;
 }
 
-section p {
+section p, section ul {
 	font-size: 1.2em;
 	line-height: 1.6;
 	letter-spacing: 0.045em;
@@ -299,6 +299,10 @@ footer a {
 	padding-bottom: 0;
 	letter-spacing: 0.15em;
 	margin: 0;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	position: relative;
 }
 
 #who h4 {
@@ -312,13 +316,6 @@ footer a {
 
 #who div > p {
 	padding: 0 0 1em 0;
-}
-
-#who h3 {
-	text-transform: uppercase;
-	text-decoration: none;
-	color: white;
-	position: relative;
 }
 
 .linkedin, .twitter {
@@ -457,6 +454,7 @@ footer a {
 		transform: translate(-4em, 0.75em);
 		transition-property: transform;
 		transition-duration: 0.5s;
+		will-change: transform;
 	}
 
 	nav.scrolling {
@@ -671,3 +669,46 @@ footer a {
 }
 
 
+/* Job page */
+.job {
+	max-width: 70em;
+	margin: 0 auto;
+}
+
+.job div {
+	margin: auto 3em;
+}
+
+.job h2 {
+	margin-top: 0;
+}
+
+.job h3 {
+	font-weight: normal;
+	padding-bottom: 0;
+	letter-spacing: 0.15em;
+	margin: 1.5em 0;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #77ff9f;
+	position: relative;
+}
+
+.job ul {
+	margin-bottom: 2em;
+}
+
+.job .details {
+	list-style-type: none;
+	padding: 0;
+}
+
+.job h1 {
+	text-align: center;
+	margin: 1em;
+}
+
+.job h1 img {
+	width: 15%;
+	height: 15%;
+}

@@ -74,12 +74,12 @@ window.addEventListener('scroll', () => {
 var currentSection = "home";
 document.body.classList.add(`current-${currentSection}`);
 
-document.querySelector('.hamburger-menu').addEventListener('click', (e) => {
+document.querySelector('.hamburger-menu') && document.querySelector('.hamburger-menu').addEventListener('click', (e) => {
   e.target.classList.toggle('open');
   nav.classList.toggle('open');
 });
 
-document.querySelector('.menu').addEventListener('click', (e) => {
+document.querySelector('.menu') && document.querySelector('.menu').addEventListener('click', (e) => {
   nav.classList.remove('open');
   document.querySelector('.hamburger-menu').classList.remove('open');
 });
