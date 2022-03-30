@@ -509,6 +509,19 @@ footer a {
 	.current-contact #nav-contact a:before {
 		transform: translate(0,  0.75em);
 	}
+
+	.current-platform #nav-platform {
+		padding-left: 2em;
+	}
+
+	.current-platform #nav-platform a {
+		opacity: 1.0;
+	}
+
+	.current-platform #nav-platform a:before {
+		transform: translate(0, 0.75em);
+	}
+
 }
 
 @media screen and (max-width: 750px) {
