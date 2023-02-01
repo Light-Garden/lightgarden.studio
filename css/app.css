@@ -497,6 +497,18 @@ footer a {
 		transform: translate(0, 0.75em);
 	}
 
+	.current-careers #nav-careers {
+		padding-left: 2em;
+	}
+
+	.current-careers #nav-careers a {
+		opacity: 1.0;
+	}
+
+	.current-careers #nav-careers a:before {
+		transform: translate(0, 0.75em);
+	}
+
 
 	.current-contact #nav-contact {
 		padding-left: 2em;
@@ -682,46 +694,31 @@ footer a {
 }
 
 
-/* Job page */
-.job {
-	max-width: 70em;
-	margin: 0 auto;
+/* Job section */
+.jobs {
+	padding: 0;
+	margin-top: 2em;
 }
 
-.job div {
-	margin: auto 3em;
+.jobs li {
+	list-style-type: none;
 }
 
-.job h2 {
-	margin-top: 0;
-}
-
-.job h3 {
+#careers h3 {
 	font-weight: normal;
 	padding-bottom: 0;
 	letter-spacing: 0.15em;
-	margin: 1.5em 0;
+	margin: 0;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #77ff9f;
+	color: white;
 	position: relative;
 }
 
-.job ul {
-	margin-bottom: 2em;
+#careers h3 a {
+	text-decoration: none;
 }
 
-.job .details {
-	list-style-type: none;
-	padding: 0;
-}
-
-.job h1 {
-	text-align: center;
-	margin: 1em;
-}
-
-.job h1 img {
-	width: 15%;
-	height: 15%;
+#careers p {
+	margin-top: 0;
 }

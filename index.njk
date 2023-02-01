@@ -14,6 +14,7 @@ layout: layouts/default.njk
         <li id="nav-about-us"><a href="#about-us">About us</a></li>
         <li id="nav-platform"><a href="#platform">Our platform</a></li>
         <li id="nav-who"><a href="#who">Who we are</a></li>
+        <li id="nav-careers"><a href="#careers">Careers</a></li>
         <li id="nav-contact"><a href="#contact">Contact</a></li>
     </ul>
     </div>
@@ -84,6 +85,20 @@ layout: layouts/default.njk
         </ul>
     </div>
     <a href="#contact" class="next-section">Contact us</a>
+</section>
+
+<section id="careers">
+    <div>
+        <h2 class="t-in th">We're hiring</h2>
+        <p class="t-in t1">If you’re passionate about VR, and building something from the ground up, in an environment created by people who care deeply about building a workplace that works for everyone, we think Light Garden would be a pretty special place, and hope you're interested in what we're doing!</p>
+        <ul class="t-in t2 jobs">
+            {% for job in careers.jobs %}
+            <li>    
+                <h3><a href="{{ job.absolute_url }}">{{ job.title }}</a></h3>
+                <p>{{ job.location.name }}<p>
+            {% endfor %}
+        </ul>
+    </div>
 </section>
 
 <section id="contact">
