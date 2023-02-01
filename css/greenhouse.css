@@ -43,3 +43,7 @@ h1, strong {
 label {
     color: #DDD;
 }
+
+#application {
+    color: #000;
+}
