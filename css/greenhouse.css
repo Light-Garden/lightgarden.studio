@@ -1,4 +1,9 @@
 body {
     background-color: black;
-    color: #222;
+    color: #DDD;
+}
+
+#footer {
+    background: black;
+    color: #DDD;
 }
