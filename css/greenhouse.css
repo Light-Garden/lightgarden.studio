@@ -16,7 +16,7 @@ a {
     text-align: center;
 }
 
-#content {
+.accessible #content {
     line-height: 1.5;
 }
 
