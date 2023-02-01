@@ -3,7 +3,12 @@ body {
     color: #DDD;
 }
 
+#logo {
+    text-align: center;
+}
+
 #footer {
     background: black;
     color: #DDD;
+    border: 0;
 }
