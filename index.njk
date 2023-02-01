@@ -91,29 +91,20 @@ layout: layouts/default.njk
     <div>
         <h2 class="t-in th">We're hiring...</h2>
         <div class="t-in t1">
-            <p>At Light Garden, we're building the next version of VR. One without controllers and button presses that immediately take away that sense of presence, and instead, a VR experience that truly blends the physical with the virtual.</p>
-
-            <p>We're building a team to solve the complex problems needed to build a pioneering product like ours, and would love to hear from people who are passionate about the things we're creating.</p>
-
-            <p>Our founding team hosts a wealth of experience, coming from Big Tech, Triple A gaming, and hit shows in London's West End. We all care deeply about building a workplace that works for everyone, and so have put in place the following:</p>
+            <p>We're building a team to solve the complex problems needed to build a pioneering product like ours, and would love to hear from people who are passionate about the things we're creating. Our <a href="#who">founding team</a> hosts a wealth of experience, coming from Big Tech, AAA gaming, and hit shows in London's West End. We all care deeply about building a workplace that works for everyone, and so have put in place the following:</p>
 
             <h3>4 Day Working Week</h3>
 
             <p>At Light Garden we treat Monday as part of your weekend. We're a team with a lot of people management experience and believe that with clear guidelines around expectations as well as the necessary tools to ensure we're all on the same page, we can achieve all of our goals whilst giving our employees 20% of their time back to enjoy their personal lives.</p>
 
-            <h3>Flexible Hours</h3>
+            <h3>West London Studio</h3>
 
-            <p>Our core hours are 10am-4pm and outside of these hours you won't be expected to attend meetings or be online unless absolutely necessary, and we'll try to give as much advanced warning as possible if we ever need to breach this rule. Ultimately, we trust you to manage your own workload and hold yourself to a high standard.</p>
-
-            <h3>Awesome Studio</h3>
-
-            <p>All of this revolutionary tech is being built out of the Light Garden Studio in West London. We are happy for you to work from home on occasion, but overall we're looking for people who are excited about building our future through face to face interactions and collaboration.</p>
+            <p>All of this revolutionary tech is being built out of the Light Garden Studio in Chiswick. We are happy for you to work from home on occasion, but overall we're looking for people who are excited about building our future through face to face interactions and collaboration.</p>
         </div>
         <ul class="t-in t2 jobs">
             {% for job in careers.jobs %}
             <li>    
                 <h3><a href="{{ job.absolute_url }}">{{ job.title }}</a></h3>
-                <p>{{ job.location.name }}<p>
             {% endfor %}
         </ul>
     </div>

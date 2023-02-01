@@ -704,11 +704,16 @@ footer a {
 	list-style-type: none;
 }
 
+#careers .jobs li h3 {
+	margin: 0;
+	font-size: 1em;
+}
+
 #careers h3 {
 	font-weight: normal;
 	padding-bottom: 0;
 	letter-spacing: 0.15em;
-	margin: 0;
+	margin-bottom: 1em;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: white;
