@@ -44,6 +44,6 @@ label {
     color: #DDD;
 }
 
-#application {
+#application, #application label, #application a {
     color: #000;
 }
