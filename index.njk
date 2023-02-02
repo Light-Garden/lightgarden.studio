@@ -102,12 +102,15 @@ layout: layouts/default.njk
             <h3>EMI Options</h3>
             <p>As an early employee of Light Garden you will benefit from a generous <a href="https://www.vestd.com/emi-share-options-scheme/">EMI option grant</a>. These tax-friendly stock options have huge potential at such an early stage of a company like ours and we want everyone to feel like they are helping build something they own a part of.</p>
         </div>
-        <ul class="t-in t2 jobs">
-            {% for job in careers.jobs %}
-            <li>    
-                <h3><a href="{{ job.absolute_url }}">{{ job.title }}</a></h3>
-            {% endfor %}
-        </ul>
+        <div class="t-in t2 jobs">
+            <h3>Current Openings</h3>
+            <ul>
+                {% for job in careers.jobs %}
+                <li>    
+                    <h3><a href="{{ job.absolute_url }}">{{ job.title }}</a></h3>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </section>
 
