@@ -696,8 +696,11 @@ footer a {
 
 /* Job section */
 .jobs {
-	padding: 0;
 	margin-top: 2em;
+}
+
+.jobs ul {
+	padding: 0;
 }
 
 .jobs li {
